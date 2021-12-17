@@ -1,0 +1,128 @@
+body {
+  background-color: #000000;
+  font-family: 'Montserrat', sans-serif; }
+
+.body1 {
+  background-image: url(../media/bg_home.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+
+.body2 {
+  background-image: url(../media/bg_bio.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+
+.body3 {
+  background-image: url(../media/bg_shop.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+
+h1 {
+  font-family: 'Bad Script', cursive;
+  color: #e2e2e2; }
+
+.bodyContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  z-index: 0; }
+
+@keyframes big {
+  50% {
+    transform: scale(1.05); } }
+
+.circle {
+  height: 650px;
+  width: 650px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.801);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .circle h1 {
+    font-size: 80px;
+    font-weight: 100px;
+    animation-name: big;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-delay: 0; }
+  .circle .menu ul {
+    display: flex;
+    flex-direction: row;
+    margin: 10px; }
+  .circle .menu li {
+    list-style: none; }
+    .circle .menu li a {
+      font-family: 'Kaushan Script', cursive;
+      text-decoration: none;
+      color: #e2e2e2;
+      font-size: 50px;
+      padding: 20px; }
+    .circle .menu li a:hover {
+      text-shadow: 0px 0px 15px white; }
+
+.menuMobil {
+  display: none; }
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px;
+  width: 100%; }
+  header a {
+    text-decoration: none; }
+  header .header__logo {
+    font-size: 80px;
+    font-family: 'Bad Script', cursive;
+    color: #e2e2e2;
+    font-size: 70px;
+    font-weight: 100px;
+    padding: 0px 10px; }
+  header .header__logo:hover {
+    transform: scale(1.05);
+    cursor: pointer; }
+  header .menu2 ul {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: transparent;
+    padding: 5px 10px; }
+  header .menu2 li {
+    float: left; }
+    header .menu2 li a {
+      font-family: 'Kaushan Script', cursive;
+      display: block;
+      color: #e2e2e2;
+      text-align: center;
+      padding: 10px 30px;
+      font-size: 40px;
+      text-decoration: none; }
+    header .menu2 li a:hover {
+      text-shadow: 0px 0px 15px white; }
+  header .menuMobil2 {
+    display: none; }
+
+.bio {
+  margin: 2% 15%; }
+  .bio h2 {
+    font-size: 50px;
+    color: #e2e2e2;
+    padding-left: 15px; }
+  .bio p {
+    font-size: 25px;
+    color: #e2e2e2;
+    text-align: justify; }
