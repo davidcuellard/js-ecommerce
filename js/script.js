@@ -8,7 +8,7 @@ let flagMore = true;
 let flagGood = true;
 let flagAll = false;
 let finalPrice = parseFloat(0);
-let prodLen;
+let productLenght;
 
 //Class product paint
 class paint {
@@ -116,31 +116,31 @@ if (flagGood == true){
 }
 
 //Print in console all the products name in default order
-prodLen = products.length;
+productLenght = products.length;
 
 console.log("Todas las pinturas en orden por defecto son: ");
-for (let i = 0; i < prodLen ; i++){
+for (let i = 0; i < productLenght ; i++){
   console.log("Obra: " + products[i].name + "Valor neto: " + products[i].price);
 }
 
 
-// sort by value high to low my function
-const prodSort = [];
-let high=1000000000000000;
-let tempNum = 0;
+// sort by value highNum to low my function
+const productSort = [];
+let highNum=1000000000000000;
+let temporalNum = 0;
 let sortNum;
-const prodSortName = products;
+const productSortName = products;
 
-for (let j = 0; j < prodLen ; j++){
-  for (let y = 0; y < prodLen ; y++){
-    if (products[y].price > tempNum && products[y].price < high){
-      tempNum =  products[y].price;
+for (let j = 0; j < productLenght ; j++){
+  for (let y = 0; y < productLenght ; y++){
+    if (products[y].price > temporalNum && products[y].price < highNum){
+      temporalNum =  products[y].price;
       sortNum = y;
     }
   }
-  prodSort[j] = products[sortNum];
-  high = tempNum;
-  tempNum=0;
+  productSort[j] = products[sortNum];
+  highNum = temporalNum;
+  temporalNum=0;
 }
 
 //Print in console all the products by value order with my function
@@ -148,14 +148,12 @@ for (let j = 0; j < prodLen ; j++){
 console.log(" ");
 console.log("Mi función");
 console.log("Todas las pinturas en orden de mayor a menor son: ");
-for (let i = 0; i < prodLen ; i++){
-  console.log("Obra: " + prodSort[i].name + "Valor neto: " + prodSort[i].price);
+for (let i = 0; i < productLenght ; i++){
+  console.log("Obra: " + productSort[i].name + "Valor neto: " + productSort[i].price);
 }
 
-
-
 //using sort function
-prodSortName.sort(function (a, b) {
+productSortName.sort(function (a, b) {
   if (a.name > b.name) {
     return 1;
   }
@@ -171,6 +169,6 @@ prodSortName.sort(function (a, b) {
 console.log(" ");
 console.log("Función Sort");
 console.log("Todas las pinturas en orden alfabético son: ");
-for (let i = 0; i < prodLen ; i++){
-  console.log("Obra: " + prodSortName[i].name + "Valor neto: " + prodSortName[i].price);
+for (let i = 0; i < productLenght ; i++){
+  console.log("Obra: " + productSortName[i].name + "Valor neto: " + productSortName[i].price);
 }
