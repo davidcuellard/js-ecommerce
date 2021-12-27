@@ -10,8 +10,8 @@ let flagAll = false;
 let finalPrice = parseFloat(0);
 let productLenght;
 
-//Class product paint
-class paint {
+//Class product Paint
+class Paint {
   constructor(author,name, price) {
     this.author = author;
     this.name  = name;
@@ -27,17 +27,17 @@ class paint {
   }
 }
 
-// New paints
-const paint1 = new paint("Leonardo da Vinci","Salvator Mundi", "450300000");
-const paint2 = new paint("Willem de Kooning","Interchange", "300000000");
-const paint3 = new paint("Pierre-Auguste Renoir","Bal du moulin de la Galette", "78100000");
+// New Paints
+const Paint1 = new Paint("Leonardo da Vinci","Salvator Mundi", "450300000");
+const Paint2 = new Paint("Willem de Kooning","Interchange", "300000000");
+const Paint3 = new Paint("Pierre-Auguste Renoir","Bal du moulin de la Galette", "78100000");
 
-//Array of paints
-const products = [paint1, paint2, paint3]
+//Array of Paints
+const products = [Paint1, Paint2, Paint3]
 
 //Use of Push in array
-products.push(new paint("Vincent Van Gogh","Retrato del Dr. Gachet", "82500000"))
-products.push(new paint("Andy Warhol","Orange Marilyn", "241000000"))
+products.push(new Paint("Vincent Van Gogh","Retrato del Dr. Gachet", "82500000"))
+products.push(new Paint("Andy Warhol","Orange Marilyn", "241000000"))
 
 
 // Calculate the total of the purchase in Millions
@@ -46,7 +46,7 @@ const totalM = () => total / 1000000;
 // Calculate the discount of 10% of the purchase
 const allProd = () => total - total * 0.1;
 
-// Function to buy or not another paint
+// Function to buy or not another Paint
 function other(){
   if (another == "no"){
     flagMore = false;
@@ -65,29 +65,29 @@ while (flagMore == true){
 
   if (numero == 1 || numero == 2 || numero == 3){
 
-    if (numero == 1 && paint1.sold == false){
-      paint1.sell();
+    if (numero == 1 && Paint1.sold == false){
+      Paint1.sell();
       other();
 
-    }else if (numero == 1 && paint1.sold == true){
+    }else if (numero == 1 && Paint1.sold == true){
       alert("¡Ha sucedido un error! La pintura deseada ya fue adquirida anteriormente, intenta nuevamente");
 
-    } else if (numero == 2 && paint2.sold == false){
-      paint2.sell();
+    } else if (numero == 2 && Paint2.sold == false){
+      Paint2.sell();
       other();
 
-    }else if (numero == 2 && paint2.sold == true){
+    }else if (numero == 2 && Paint2.sold == true){
       alert("¡Ha sucedido un error! La pintura deseada ya fue adquirida anteriormente, intenta nuevamente");
 
-    } else if (numero == 3 && paint3.sold == false){
-      paint3.sell();
+    } else if (numero == 3 && Paint3.sold == false){
+      Paint3.sell();
       other();
 
-    }else if (numero == 3 && paint3.sold == true){
+    }else if (numero == 3 && Paint3.sold == true){
       alert("¡Ha sucedido un error! La pintura deseada ya fue adquirida anteriormente, intenta nuevamente");
     }
 
-    if (paint1.sold == true && paint2.sold == true && paint3.sold == true) {   
+    if (Paint1.sold == true && Paint2.sold == true && Paint3.sold == true) {   
       alert("Felicitaciones, ya has comprado todas las pinturas, tienes un 10% de descuento en el total de los productos");
       flagAll=true;
       flagMore = false;
