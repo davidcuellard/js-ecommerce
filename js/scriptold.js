@@ -9,12 +9,10 @@ let flagGood = true;
 let flagAll = false;
 let finalPrice = parseFloat(0);
 let productLenght;
-let totalBuyed=0;
 
-//Class product paint
+//Class product Paint
 class Paint {
-  constructor(id, author, name, price) {
-    this.id = id;
+  constructor(author,name, price) {
     this.author = author;
     this.name  = name;
     this.price  = parseFloat(price);
@@ -25,23 +23,21 @@ class Paint {
     this.sold = true;
     total = total + this.price;
     alert("El valor total de su pintura es de: " + this.price);
+    another = prompt('¿Deseas comprar otra pintura? \n Escribe si o no')
   }
 }
 
-// New paints
-const paint1 = new Paint("1", "Leonardo da Vinci","Salvator Mundi", "450300000");
-const paint2 = new Paint("2", "Willem de Kooning","Interchange", "300000000");
-const paint3 = new Paint("3", "Pierre-Auguste Renoir","Bal du moulin de la Galette", "78100000");
+// New Paints
+const Paint1 = new Paint("Leonardo da Vinci","Salvator Mundi", "450300000");
+const Paint2 = new Paint("Willem de Kooning","Interchange", "300000000");
+const Paint3 = new Paint("Pierre-Auguste Renoir","Bal du moulin de la Galette", "78100000");
 
-//Array of paints
-const products = [paint1, paint2, paint3]
-
-const paint4 = new Paint("4", "Vincent Van Gogh","Retrato del Dr. Gachet", "82500000");
-const paint5 = new Paint("5", "Andy Warhol","Orange Marilyn", "241000000");
+//Array of Paints
+const products = [Paint1, Paint2, Paint3]
 
 //Use of Push in array
-products.push(paint4)
-products.push(paint5)
+products.push(new Paint("Vincent Van Gogh","Retrato del Dr. Gachet", "82500000"))
+products.push(new Paint("Andy Warhol","Orange Marilyn", "241000000"))
 
 
 // Calculate the total of the purchase in Millions
@@ -50,9 +46,8 @@ const totalM = () => total / 1000000;
 // Calculate the discount of 10% of the purchase
 const allProd = () => total - total * 0.1;
 
-// Function to buy or not another paint
+// Function to buy or not another Paint
 function other(){
-  another = prompt('¿Deseas comprar otra pintura? \n Escribe si o no')
   if (another == "no"){
     flagMore = false;
   } else if (another == "si"){
@@ -63,41 +58,39 @@ function other(){
   }
 }
 
-//All paints buyed
-function allPaintsBuyed(){
-  if (totalBuyed == productLenght) {   
-    alert("Felicitaciones, ya has comprado todas las pinturas, tienes un 10% de descuento en el total de los productos");
-    flagAll=true;
-    flagMore = false;
-  }
-}
-
-//Print in console all the products name in default order
-productLenght = products.length;
-
-console.log("Todas las pinturas en orden por defecto son: ");
-for (let i = 0; i < productLenght ; i++){
-  console.log("id: " + products[i].id + "  Obra: " + products[i].name + "  Valor neto: " + products[i].price);
-}
-
 // Cicle of the script
 while (flagMore == true){
-
-  entrada = prompt('Escribe el número de la pintura que deseas comprar \n Recuerda que no puedes comprar la pintura dos veces \n Las pinturas las puedes ver en consola\n \n Recuerda el valor que al valor de la pintura se le sumará el valor del IVA del 19%');
+  entrada = prompt('Escribe el número de la pintura que deseas comprar \n Recuerda que no puedes comprar la pintura dos veces \n 1. Salvator Mundi	$450.3 millones \n 2. Interchange	$300 millones \n 3. Bal du moulin de la Galette \n Pronto encontrarás nuevas pinturas\n \n Recuerda el valor que al valor de la pintura se le sumará el valor del IVA del 19%');
   numero = parseInt(entrada);
 
-  if (numero <= productLenght){
+  if (numero == 1 || numero == 2 || numero == 3){
 
-    if (numero == products[numero-1].id && products[numero-1].sold == false){
-      products[numero-1].sell();
-      totalBuyed++;
-      allPaintsBuyed();
-      if(flagAll == false){
-        other();
-      }
+    if (numero == 1 && Paint1.sold == false){
+      Paint1.sell();
+      other();
 
-    }else if (numero == products[numero-1].id && products[numero-1].sold == true){
+    }else if (numero == 1 && Paint1.sold == true){
       alert("¡Ha sucedido un error! La pintura deseada ya fue adquirida anteriormente, intenta nuevamente");
+
+    } else if (numero == 2 && Paint2.sold == false){
+      Paint2.sell();
+      other();
+
+    }else if (numero == 2 && Paint2.sold == true){
+      alert("¡Ha sucedido un error! La pintura deseada ya fue adquirida anteriormente, intenta nuevamente");
+
+    } else if (numero == 3 && Paint3.sold == false){
+      Paint3.sell();
+      other();
+
+    }else if (numero == 3 && Paint3.sold == true){
+      alert("¡Ha sucedido un error! La pintura deseada ya fue adquirida anteriormente, intenta nuevamente");
+    }
+
+    if (Paint1.sold == true && Paint2.sold == true && Paint3.sold == true) {   
+      alert("Felicitaciones, ya has comprado todas las pinturas, tienes un 10% de descuento en el total de los productos");
+      flagAll=true;
+      flagMore = false;
     }
   
   }else{
@@ -122,7 +115,16 @@ if (flagGood == true){
   alert("Usted ingresó un dato invalido, por favor refresque la página y vuelva a intentarlo");
 }
 
-/* // sort by value highNum to low my function
+//Print in console all the products name in default order
+productLenght = products.length;
+
+console.log("Todas las pinturas en orden por defecto son: ");
+for (let i = 0; i < productLenght ; i++){
+  console.log("Obra: " + products[i].name + "Valor neto: " + products[i].price);
+}
+
+
+// sort by value highNum to low my function
 const productSort = [];
 let highNum=1000000000000000;
 let temporalNum = 0;
@@ -169,4 +171,4 @@ console.log("Función Sort");
 console.log("Todas las pinturas en orden alfabético son: ");
 for (let i = 0; i < productLenght ; i++){
   console.log("Obra: " + productSortName[i].name + "Valor neto: " + productSortName[i].price);
-} */
+}
