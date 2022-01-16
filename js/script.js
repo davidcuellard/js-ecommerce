@@ -36,10 +36,10 @@ const paint3 = new Paint("3", "Pierre-Auguste Renoir","Bal du moulin de la Galet
 //Array of paints
 const products = [paint1, paint2, paint3]
 
-const paint4 = new Paint("4", "Vincent Van Gogh","Retrato del Dr. Gachet", "82500000");
-const paint5 = new Paint("5", "Andy Warhol","Orange Marilyn", "241000000");
 
 //Use of Push in array
+const paint4 = new Paint("4", "Vincent Van Gogh","Retrato del Dr. Gachet", "82500000");
+const paint5 = new Paint("5", "Andy Warhol","Orange Marilyn", "241000000");
 products.push(paint4)
 products.push(paint5)
 

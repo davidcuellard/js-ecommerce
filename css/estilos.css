@@ -144,7 +144,7 @@ header {
     flex-direction: row;
     justify-content: space-evenly;
     align-content: center;
-    height: 60vh; }
+    height: 120%; }
     .shop .shop-cards #filters {
       border-radius: 15px;
       background-color: white;
@@ -158,38 +158,39 @@ header {
       border-radius: 15px;
       background-color: white;
       width: 55%;
-      height: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-content: center;
-      padding: 10px;
-      overflow-x: auto;
-      overflow-y: hidden; }
-      .shop .shop-cards #products .card-paint {
-        width: 300px;
-        height: 350px;
-        background-color: whitesmoke;
-        border-radius: 15px;
-        box-shadow: 5px 10px 8px #888888;
-        margin: 20px;
-        padding: 20px; }
-        .shop .shop-cards #products .card-paint .paint {
-          width: 230px;
-          height: 230px; }
-        .shop .shop-cards #products .card-paint p {
-          margin-bottom: 0px;
-          color: black;
-          font-weight: 600; }
-        .shop .shop-cards #products .card-paint button {
-          font-weight: bold;
-          color: black;
-          background-color: #fffd6e;
-          border: 0px;
-          border-radius: 10px;
-          margin-left: 200px; }
-        .shop .shop-cards #products .card-paint button:hover {
-          background-color: #ff6e6e; }
+      height: 100%; }
+      .shop .shop-cards #products .productsClass {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        padding: 10px;
+        overflow-x: auto;
+        overflow-y: hidden; }
+        .shop .shop-cards #products .productsClass .card-paint {
+          width: 280px;
+          height: 350px;
+          background-color: whitesmoke;
+          border-radius: 15px;
+          box-shadow: 5px 10px 8px #888888;
+          margin: 20px;
+          padding: 20px; }
+          .shop .shop-cards #products .productsClass .card-paint .paint {
+            width: 230px;
+            height: 230px; }
+          .shop .shop-cards #products .productsClass .card-paint p {
+            margin-bottom: 0px;
+            color: black;
+            font-weight: 600; }
+          .shop .shop-cards #products .productsClass .card-paint button {
+            font-weight: bold;
+            color: black;
+            background-color: #fffd6e;
+            border: 0px;
+            border-radius: 10px;
+            margin-left: 200px; }
+          .shop .shop-cards #products .productsClass .card-paint button:hover {
+            background-color: #ff6e6e; }
     .shop .shop-cards #shoppingCart {
       border-radius: 15px;
       background-color: white;
