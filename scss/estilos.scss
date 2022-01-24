@@ -265,6 +265,12 @@ header{
         color: black;
         font-weight: 600;
       }
+      div{
+        display: flex;
+      }
+      h4{
+        padding-right: 10px;
+      }
     }
   }
 }

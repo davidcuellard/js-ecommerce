@@ -1,3 +1,4 @@
+"use strict";
 class Cards {
   constructor(fields) {
       this.fields = fields

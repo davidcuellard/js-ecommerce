@@ -1,14 +1,16 @@
 "use strict";
+let total = 0;
+
 class Item {
   constructor(title, price) {
     this.title = title
-    this.price = price
+    this.price = parseFloat(price)
   }
 
   static getHTML(title, price) {
     return `
       <p>${title}</p>
-      <p>${price}</p>
+      <p> Price: ${price}</p>
     `;
   }
 }
@@ -27,6 +29,12 @@ class ListItems {
     this.itemsBuyed.push(objectItem)
   }
 
+  sumTotal(objectItem){
+    total = total + objectItem.price;
+    console.log(total)
+    $("#totalBuyed").replaceWith(`<h4 id="totalBuyed">  ${total} </h4>`);
+  }
+
   saveList() {
     localStorage.setItem('items', JSON.stringify(this.itemsBuyed))
   }
@@ -42,6 +50,7 @@ class ListItems {
       this.addCard(objectItem)
     }
   }
+
 }
 
 const listItems = new ListItems()
@@ -57,4 +66,5 @@ function saveCard(position) {
   const item = new Item(title, price)
   listItems.addCard(item)
   listItems.saveList()
+  listItems.sumTotal(item)
 }

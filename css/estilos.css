@@ -204,3 +204,7 @@ header {
         margin-bottom: 0px;
         color: black;
         font-weight: 600; }
+      .shop .shop-cards #shoppingCart div {
+        display: flex; }
+      .shop .shop-cards #shoppingCart h4 {
+        padding-right: 10px; }

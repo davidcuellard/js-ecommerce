@@ -14,7 +14,7 @@ const productFields = [
     price: '0.0012'
   },
   {
-    id: '0',
+    id: '2',
     image: '../media/paint3.PNG',
     name: 'Una x',
     year: '2001',

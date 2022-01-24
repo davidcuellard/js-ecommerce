@@ -1,3 +1,9 @@
+"use strict";
+
+$( document ).ready(function() {
+  console.log('DOM is ready');
+});
+
 class CardPaint {
   constructor(id ,image, name, year, price) {
       this.id = id
@@ -18,15 +24,16 @@ class CardPaint {
             <p class="title">${this.name}</p>
             <p>${this.year}</p>
             <p class="price">${this.price} BTC</p>
-            <button>Add</button>
+            <button class="button${this.id}">Add</button>
           </form> 
       `
   }
 
   addEvent() {
-    this.nodo.addEventListener('click', (event) => {
+    $(this.nodo).on('click', (event) => {
         if (event.target.tagName === "BUTTON") {
-            console.log('New product added')
+            console.log(`New product added: ${this.name}`)
+            $(`.button${this.id}`).hide();
         }
     }) 
   }
