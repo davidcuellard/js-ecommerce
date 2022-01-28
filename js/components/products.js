@@ -1,9 +1,5 @@
 "use strict";
 
-$( document ).ready(function() {
-  console.log('DOM is ready');
-});
-
 class CardPaint {
   constructor(id ,image, name, year, price) {
       this.id = id
@@ -15,6 +11,7 @@ class CardPaint {
       this.nodo.setAttribute("class","card-paint")
       this.nodo.innerHTML = this.genHTML()
       this.addEvent()
+      //this.hideAddButton()
   }
   
   genHTML() {
@@ -23,7 +20,7 @@ class CardPaint {
           <form action="javascript:saveCard(${this.id})">
             <p class="title">${this.name}</p>
             <p>${this.year}</p>
-            <p class="price">${this.price} BTC</p>
+            <p class="price">${this.price} USD</p>
             <button class="button${this.id}">Add</button>
           </form> 
       `
@@ -33,8 +30,8 @@ class CardPaint {
     $(this.nodo).on('click', (event) => {
         if (event.target.tagName === "BUTTON") {
             console.log(`New product added: ${this.name}`)
-            $(`.button${this.id}`).hide();
         }
     }) 
   }
 }
+

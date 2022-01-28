@@ -1,16 +1,24 @@
 "use strict";
-let total = 0;
+let sum = localStorage.getItem('sum')
+if (!sum) {
+  sum = parseFloat(0)
+  localStorage.setItem('sum', JSON.stringify(sum))
+}
 
 class Item {
-  constructor(title, price) {
+  constructor(id, title, price) {
+    this.id = id
     this.title = title
     this.price = parseFloat(price)
   }
 
-  static getHTML(title, price) {
+  static getHTML(id, title, price) {
     return `
-      <p>${title}</p>
-      <p> Price: ${price}</p>
+      <form action="javascript:deleteItem(${id})">
+        <p>${title}</p>
+        <p> Price: ${price}</p>
+        <button class="buttonTrash">🗑️</button>
+      </form> 
     `;
   }
 }
@@ -24,15 +32,9 @@ class ListItems {
 
   addCard(objectItem) {
     const card = document.createElement("li"); 
-    card.innerHTML = Item.getHTML(objectItem.title, objectItem.price); 
+    card.innerHTML = Item.getHTML(objectItem.id, objectItem.title, objectItem.price); 
     this.nodolist.appendChild(card); 
     this.itemsBuyed.push(objectItem)
-  }
-
-  sumTotal(objectItem){
-    total = total + objectItem.price;
-    console.log(total)
-    $("#totalBuyed").replaceWith(`<h4 id="totalBuyed">  ${total} </h4>`);
   }
 
   saveList() {
@@ -46,25 +48,56 @@ class ListItems {
       listArray = []
     }
     for (const item of listArray) {
-      const objectItem = new Item(item.title, item.price)
+      const objectItem = new Item(item.id,item.title, item.price)
       this.addCard(objectItem)
     }
+  }
+
+  sumTotal(objectItem){
+    let priceObject = parseFloat(objectItem.price) 
+    sum = localStorage.getItem('sum')
+    sum = parseFloat(sum)
+    sum = sum + priceObject;
+    localStorage.setItem('sum', JSON.stringify(sum))
   }
 
 }
 
 const listItems = new ListItems()
 
-function saveCard(position) {
+function saveCard(id) {
   const titleInput = document.getElementsByClassName("title");
   const priceInput = document.getElementsByClassName("price");
 
+  const title = titleInput[id].innerHTML;
+  const price = priceInput[id].innerHTML;
 
-  const title = titleInput[position].innerHTML;
-  const price = priceInput[position].innerHTML;
-
-  const item = new Item(title, price)
+  const item = new Item(id, title, price)
   listItems.addCard(item)
   listItems.saveList()
   listItems.sumTotal(item)
+  hideAddButton()
+  showTotal()
 }
+
+function hideAddButton(){
+  const listItemsLocal = localStorage.getItem('items')
+  let listArrayLocal = JSON.parse(listItemsLocal)
+  
+  if (!listArrayLocal) {
+    listArrayLocal = []
+  }
+
+  for (let i = 0 ; i < productFields.length ; i++){
+    for (let j = 0 ; j < listArrayLocal.length ; j++){
+      if (productFields[i].id == listArrayLocal[j].id){
+        $(`.button${i}`).hide();
+      }
+    }
+  } 
+}
+
+function showTotal(){
+  $("#totalBuyed").replaceWith(`<h4 id="totalBuyed">  ${sum} </h4>`);
+}
+
