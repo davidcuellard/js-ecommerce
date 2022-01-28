@@ -255,6 +255,10 @@ header{
       background-color: white;
       width: 20%;
       height: 100%;
+      form{
+        display: flex;
+        flex-direction: column;
+      }
       h3{
         text-align: center;
         font-weight: 700;
@@ -270,6 +274,12 @@ header{
       }
       h4{
         padding-right: 10px;
+      }
+      .buttonTrash{
+        border: none;
+        background: none;
+        align-self: end;
+        margin-right: 10px;
       }
     }
   }

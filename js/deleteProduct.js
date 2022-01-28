@@ -10,20 +10,19 @@ function deleteItem(id) {
 }
 
 function deleteFromArray(toFind){
+  // Get items
   const listString = localStorage.getItem('items')
   let listArray = JSON.parse(listString)
 
+  //find id to delete
   const toDelete = listArray.find( e => e.id == toFind );
-
-  console.log(toDelete);
-  
   let index = listArray.indexOf(toDelete);
-
-  console.log(index);
-
+  
+  //Delete item by id
   let listArrayNew = listArray.splice(index, 1)
+  
+  //Save new Item array in localStorage
   localStorage.setItem('items', JSON.stringify(listArray))
-
 }
 
 function restTotal(id){
@@ -35,10 +34,9 @@ function restTotal(id){
 
   let sumToRest = localStorage.getItem('sum')
   sumToRest = parseFloat(sumToRest)
-
   sumToRest = sumToRest - price;
+  sum = sumToRest;
 
-
-  localStorage.setItem('sum', JSON.stringify(sumToRest))
+  localStorage.setItem('sum', JSON.stringify(sum))
 
 }

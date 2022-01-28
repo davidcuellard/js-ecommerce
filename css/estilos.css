@@ -196,6 +196,9 @@ header {
       background-color: white;
       width: 20%;
       height: 100%; }
+      .shop .shop-cards #shoppingCart form {
+        display: flex;
+        flex-direction: column; }
       .shop .shop-cards #shoppingCart h3 {
         text-align: center;
         font-weight: 700;
@@ -208,3 +211,8 @@ header {
         display: flex; }
       .shop .shop-cards #shoppingCart h4 {
         padding-right: 10px; }
+      .shop .shop-cards #shoppingCart .buttonTrash {
+        border: none;
+        background: none;
+        align-self: end;
+        margin-right: 10px; }
