@@ -32,6 +32,7 @@ class ListItems {
 
   addCard(objectItem) {
     const card = document.createElement("li"); 
+    card.setAttribute("id",`li${objectItem.id}`)
     card.innerHTML = Item.getHTML(objectItem.id, objectItem.title, objectItem.price); 
     this.nodolist.appendChild(card); 
     this.itemsBuyed.push(objectItem)
@@ -100,4 +101,3 @@ function hideAddButton(){
 function showTotal(){
   $("#totalBuyed").replaceWith(`<h4 id="totalBuyed">  ${sum} </h4>`);
 }
-

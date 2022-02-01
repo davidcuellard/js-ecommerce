@@ -1,12 +1,12 @@
 "use strict";
 
-function deleteItem(id) {
-  deleteFromArray(id)
-  restTotal(id)
+function deleteItem(idToDelete) {
+  $(`.button${idToDelete}`).show();
+  deleteFromArray(idToDelete)
+  restTotal(idToDelete)
   showTotal()
-  location.reload()
-
-  $(`.button${id}`).show();
+  deleteLi(idToDelete)
+  //location.reload()
 }
 
 function deleteFromArray(toFind){
@@ -25,10 +25,10 @@ function deleteFromArray(toFind){
   localStorage.setItem('items', JSON.stringify(listArray))
 }
 
-function restTotal(id){
+function restTotal(idToDelete){
 
   const priceInput = document.getElementsByClassName("price");
-  let price = priceInput[id].innerHTML;
+  let price = priceInput[idToDelete].innerHTML;
   price = price.match(/(\d+)/)
   price = parseFloat(price)
 
@@ -40,3 +40,9 @@ function restTotal(id){
   localStorage.setItem('sum', JSON.stringify(sum))
 
 }
+
+function deleteLi(idToDelete){
+  document.getElementById(`li${idToDelete}`).remove();
+  
+}
+
