@@ -11,7 +11,6 @@ class CardPaint {
       this.nodo.setAttribute("class","card-paint")
       this.nodo.innerHTML = this.genHTML()
       this.addEvent()
-      //this.hideAddButton()
   }
   
   genHTML() {
@@ -19,9 +18,9 @@ class CardPaint {
           <img src="${this.image}" class="paint">
           <form action="javascript:saveCard(${this.id})">
             <p class="title">${this.name}</p>
-            <p>${this.year}</p>
+            <p>Year ${this.year}</p>
             <p class="price">${this.price} USD</p>
-            <button class="button${this.id}">Add</button>
+            <button class="buttonAdd button${this.id}">Add</button>
           </form> 
       `
   }

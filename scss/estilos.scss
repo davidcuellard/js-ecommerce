@@ -234,15 +234,14 @@ header{
             color: black;
             font-weight: 600;
           }
-          button{
+          .buttonAdd{
             font-weight: bold;
             color: rgb(0, 0, 0);
-            background-color: rgb(255, 253, 110);
+            background-color: rgb(250, 246, 4);
             border: 0px;
             border-radius: 10px;
             margin-left: 200px;
           }
-          
   
         }
       }
@@ -251,8 +250,7 @@ header{
     #shoppingCart{
       border-radius: 15px;
       background-color: white;
-      width: 20%;
-      height: 100%;
+      width: 100%;     
       form{
         display: flex;
         flex-direction: column;
@@ -272,6 +270,7 @@ header{
       }
       h4{
         padding-right: 10px;
+        font-weight: 900;
       }
       .buttonTrash{
         border: none;
@@ -279,6 +278,7 @@ header{
         align-self: end;
         margin-right: 10px;
       }
+
     }
   }
 }

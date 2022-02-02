@@ -6,7 +6,9 @@ function deleteItem(idToDelete) {
   restTotal(idToDelete)
   showTotal()
   deleteLi(idToDelete)
-  //location.reload()
+
+  listItems.delItemsBuyedArray(idToDelete)
+  
 }
 
 function deleteFromArray(toFind){
@@ -20,6 +22,7 @@ function deleteFromArray(toFind){
   
   //Delete item by id
   let listArrayNew = listArray.splice(index, 1)
+  console.log(`Product deleted: ${toDelete.title}`)
   
   //Save new Item array in localStorage
   localStorage.setItem('items', JSON.stringify(listArray))

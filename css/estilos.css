@@ -182,18 +182,17 @@ header {
             margin-bottom: 0px;
             color: black;
             font-weight: 600; }
-          .shop .shop-cards #products .productsClass .card-paint button {
+          .shop .shop-cards #products .productsClass .card-paint .buttonAdd {
             font-weight: bold;
             color: black;
-            background-color: #fffd6e;
+            background-color: #faf604;
             border: 0px;
             border-radius: 10px;
             margin-left: 200px; }
     .shop .shop-cards #shoppingCart {
       border-radius: 15px;
       background-color: white;
-      width: 20%;
-      height: 100%; }
+      width: 100%; }
       .shop .shop-cards #shoppingCart form {
         display: flex;
         flex-direction: column; }
@@ -208,7 +207,8 @@ header {
       .shop .shop-cards #shoppingCart div {
         display: flex; }
       .shop .shop-cards #shoppingCart h4 {
-        padding-right: 10px; }
+        padding-right: 10px;
+        font-weight: 900; }
       .shop .shop-cards #shoppingCart .buttonTrash {
         border: none;
         background: none;

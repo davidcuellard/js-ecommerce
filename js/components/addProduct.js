@@ -35,7 +35,7 @@ class ListItems {
     card.setAttribute("id",`li${objectItem.id}`)
     card.innerHTML = Item.getHTML(objectItem.id, objectItem.title, objectItem.price); 
     this.nodolist.appendChild(card); 
-    this.itemsBuyed.push(objectItem)
+    this.itemsBuyed.push(objectItem);
   }
 
   saveList() {
@@ -62,6 +62,16 @@ class ListItems {
     localStorage.setItem('sum', JSON.stringify(sum))
   }
 
+  delItemsBuyedArray(toFind){
+
+    //find id to delete
+    const toDelete = this.itemsBuyed.find( e => e.id == toFind );
+    let index = this.itemsBuyed.indexOf(toDelete);
+
+    //Delete item by id
+    let listArrayNew = this.itemsBuyed.splice(index, 1)
+  }
+
 }
 
 const listItems = new ListItems()
@@ -84,14 +94,15 @@ function saveCard(id) {
 function hideAddButton(){
   const listItemsLocal = localStorage.getItem('items')
   let listArrayLocal = JSON.parse(listItemsLocal)
+  let productFieldstoHide = JSON.parse(localStorage.getItem('productFields'))
   
   if (!listArrayLocal) {
     listArrayLocal = []
   }
 
-  for (let i = 0 ; i < productFields.length ; i++){
+  for (let i = 0 ; i < productFieldstoHide.length ; i++){
     for (let j = 0 ; j < listArrayLocal.length ; j++){
-      if (productFields[i].id == listArrayLocal[j].id){
+      if (productFieldstoHide[i].id == listArrayLocal[j].id){
         $(`.button${i}`).hide();
       }
     }
@@ -99,5 +110,5 @@ function hideAddButton(){
 }
 
 function showTotal(){
-  $("#totalBuyed").replaceWith(`<h4 id="totalBuyed">  ${sum} </h4>`);
+  $("#totalBuyed").replaceWith(`<h4 id="totalBuyed">  ${sum} USD</h4>`);
 }

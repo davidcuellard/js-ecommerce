@@ -51,17 +51,76 @@
           </div>
           <div id = "products"></div>  
 
-          <div id = "shoppingCart">
-            <h3>Shopping Cart</h3>
-            <ul id="list" class="card-list"></ul>
-            <div>
-              <h4>Total: <h4 id="totalBuyed"></h4></h4>
+          <div class = "buyProducts">
+            <div id = "shoppingCart">
+              <h3>Shopping Cart</h3>
+              <ul id="list" class="card-list"></ul>
+              <div id="buy">
+                <h4>Total: <h4 id="totalBuyed"></h4></h4>
+              </div>            
+            </div>
+            
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-success buttonBuy" data-bs-toggle="modal" data-bs-target="#buyerModal">
+            BUY
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="buyerModal" tabindex="-1" aria-labelledby="buyerModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body fw-bolder">
+                    
+                  <b>Write your data to send your purchase</b><br><br>
+                  
+                  <form id="formdata">
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name"><br>
+                    <label for="address">Address:</label><br>
+                    <input type="text" id="address" name="address"><br>
+                    <label for="phone">Phone:</label><br>
+                    <input type="text" id="phone" name="phone"><br>
+                  </form>
+
+                </div>
+                <div class="modal-footer">
+                  <button id="sendButton" type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#closeModal">Send</button>
+                </div>
+              </div>
             </div>
           </div>
 
+          <!-- Modal2 -->
+          <div class="modal fade" id="closeModal" tabindex="-1" aria-labelledby="buyerModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body fw-bolder">
+                    
+                  <b>Thanks for your purchase</b><br><br>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Send</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          </div>
+          
         </div>
         
       </div>
+
+      
+
+      
       
     </div>
 
@@ -74,13 +133,15 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
 
     <!-- Script to add products -->
-    <script src="../js/components/products.js"></script>
+    
     <script src="../js/components/cards.js"></script>
-    <script src="../js/constants/productFields.js"></script>
+    <script src="../js/components/products.js"></script>
+    
     <script src="../js/shop.js"></script>
-    <script src="../js/components/animations.js"></script>
-    <script src="../js/addProduct.js"></script>
-    <script src="../js/deleteProduct.js"></script>
 
+    <script src="../js/components/addProduct.js"></script>
+    <script src="../js/components/deleteProduct.js"></script>
+
+    <script src="../js/components/buy.js"></script>
 </body>
 </html>
