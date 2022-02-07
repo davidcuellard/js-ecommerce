@@ -33,6 +33,7 @@ class ListItems {
   addCard(objectItem) {
     const card = document.createElement("li"); 
     card.setAttribute("id",`li${objectItem.id}`)
+    card.setAttribute("class",`listLi`)
     card.innerHTML = Item.getHTML(objectItem.id, objectItem.title, objectItem.price); 
     this.nodolist.appendChild(card); 
     this.itemsBuyed.push(objectItem);
@@ -76,14 +77,18 @@ class ListItems {
 
 const listItems = new ListItems()
 
-function saveCard(id) {
-  const titleInput = document.getElementsByClassName("title");
-  const priceInput = document.getElementsByClassName("price");
+function saveCard(idFind) {
 
-  const title = titleInput[id].innerHTML;
-  const price = priceInput[id].innerHTML;
+  const listItemsLocal = localStorage.getItem('productFields')
+  let listArrayLocal = JSON.parse(listItemsLocal)
 
-  const item = new Item(id, title, price)
+  const itemFind = listArrayLocal.find( e => e.id == idFind );
+  let index = listArrayLocal.indexOf(itemFind);
+
+  let name = listArrayLocal[index].name;
+  let price = listArrayLocal[index].price;
+
+  const item = new Item(idFind, name, price)
   listItems.addCard(item)
   listItems.saveList()
   listItems.sumTotal(item)
@@ -91,23 +96,7 @@ function saveCard(id) {
   showTotal()
 }
 
-function hideAddButton(){
-  const listItemsLocal = localStorage.getItem('items')
-  let listArrayLocal = JSON.parse(listItemsLocal)
-  let productFieldstoHide = JSON.parse(localStorage.getItem('productFields'))
-  
-  if (!listArrayLocal) {
-    listArrayLocal = []
-  }
 
-  for (let i = 0 ; i < productFieldstoHide.length ; i++){
-    for (let j = 0 ; j < listArrayLocal.length ; j++){
-      if (productFieldstoHide[i].id == listArrayLocal[j].id){
-        $(`.button${i}`).hide();
-      }
-    }
-  } 
-}
 
 function showTotal(){
   $("#totalBuyed").replaceWith(`<h4 id="totalBuyed">  ${sum} USD</h4>`);

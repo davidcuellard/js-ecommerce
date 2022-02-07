@@ -30,8 +30,16 @@ function deleteFromArray(toFind){
 
 function restTotal(idToDelete){
 
-  const priceInput = document.getElementsByClassName("price");
-  let price = priceInput[idToDelete].innerHTML;
+  const listItemsLocal = localStorage.getItem('productFields')
+  let listArrayLocal = JSON.parse(listItemsLocal)
+
+  const itemFind = listArrayLocal.find( e => e.id == idToDelete );
+  let index = listArrayLocal.indexOf(itemFind);
+
+  let name = listArrayLocal[index].name;
+  let price = listArrayLocal[index].price;
+
+
   price = price.match(/(\d+)/)
   price = parseFloat(price)
 

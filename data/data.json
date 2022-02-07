@@ -1,41 +1,41 @@
 [
   {
-    "id": "0",
+    "id":0,
     "image": "../media/paint1.png",
     "name": "One paint more",
     "year": "2021",
     "price": "299"
   },
   {
-    "id": "1",
+    "id": 1,
     "image": "../media/paint2.png",
     "name": "Less life",
     "year": "2011",
     "price": "399"
   },
   {
-    "id": "2",
+    "id": 2,
     "image": "../media/paint3.PNG",
     "name": "X in H",
     "year": "2010",
     "price": "199"
   },
   {
-    "id": "3",
+    "id": 3,
     "image": "../media/paint4.jpg",
     "name": "Abstract paint",
     "year": "2022",
     "price": "599"
   },
   {
-    "id": "4",
+    "id": 4,
     "image": "../media/paint5.jpg",
     "name": "life is more",
     "year": "2003",
     "price": "499"
   },
   {
-    "id": "5",
+    "id": 5,
     "image": "../media/paint6.jpg",
     "name": "My paint is yours",
     "year": "1996",

@@ -11,22 +11,15 @@ $(document).ready(function() {
   $.getJSON( urlJSON , (res) => {
     localStorage.setItem('productFields', JSON.stringify(res))
 
-    let productFields = JSON.parse(localStorage.getItem('productFields'))
-
-    const products = new Cards(productFields)
-
-    nodoPrincipal.appendChild(products.nodo)
-
+    showCards('productFields')
     hideAddButton();
     showTotal();
     animations();
   
   })
 
-  
 });
 
-const nodoPrincipal = document.getElementById('products')
 
 function animations(){
   $(".paint").css("border", "double 4px rgb(70, 34, 13)")
@@ -35,4 +28,45 @@ function animations(){
              .fadeIn(3000)
 }
 
+function showCards(key){
+  const nodoPrincipal = document.getElementById('products')
 
+  let productFields = JSON.parse(localStorage.getItem(key))
+
+  const products = new Cards(productFields)
+
+  nodoPrincipal.appendChild(products.nodo)
+}
+
+function hideAddButton(){
+  const listItemsLocal = localStorage.getItem('items')
+  let listArrayLocal = JSON.parse(listItemsLocal)
+  let productFieldstoHide = JSON.parse(localStorage.getItem('productFields'))
+  
+  if (!listArrayLocal) {
+    listArrayLocal = []
+  }
+
+  for (let i = 0 ; i < productFieldstoHide.length ; i++){
+    for (let j = 0 ; j < listArrayLocal.length ; j++){
+      if (productFieldstoHide[i].id == listArrayLocal[j].id){
+        $(`.button${i}`).hide();
+      }
+    }
+  } 
+
+  const listBuyedLocal = localStorage.getItem('buyed')
+  let listArrayBuyed = JSON.parse(listBuyedLocal)
+  
+  if (!listArrayBuyed) {
+    listArrayBuyed = []
+  }
+
+  for (let i = 0 ; i < productFieldstoHide.length ; i++){
+    for (let j = 0 ; j < listArrayBuyed.length ; j++){
+      if (productFieldstoHide[i].id == listArrayBuyed[j].id){
+        $(`.button${i}`).hide();
+      }
+    }
+  } 
+}
