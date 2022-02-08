@@ -1,7 +1,7 @@
 {
   "name": "project",
   "version": "1.0.0",
-  "description": "",
+  "description": "Pasos para Instalar SASS y NodeSASS\r -----------------------------------\r Antes de instalar, verificaremos si tenemos Node.js y NPM instalado.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,5 +13,13 @@
   "devDependencies": {
     "node-sass": "^7.0.0",
     "nodemon": "^2.0.15"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidcuellard/js-ecommerce.git"
+  },
+  "bugs": {
+    "url": "https://github.com/davidcuellard/js-ecommerce/issues"
+  },
+  "homepage": "https://github.com/davidcuellard/js-ecommerce#readme"
 }
