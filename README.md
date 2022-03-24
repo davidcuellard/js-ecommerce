@@ -1,15 +1,16 @@
-Pasos para Instalar SASS y NodeSASS
------------------------------------
-Antes de instalar, verificaremos si tenemos Node.js y NPM instalado.
+@author: JS Ecommerce
 
-En la consola de comandos, ejecutamos:
+Portfolio
 
-node -v (Si nos tira un número de versión, tenemos instalado Node... no hace falta realizar el Paso 1)
-npm -v (Si nos tira un número de versión, tenemos instalado NPM... no hace falta realizar el Paso 2)
+Objetivo: Develop a web page using js, html and css
 
-1. Instalar Node.js (Ir a https://nodejs.org/es/download/ descargar la versión para Windows 10)
-2. Instalar NPM (En la consola de comandos o Terminal de Visual Code, ejecutar: npm install npm@latest -g)
-3. Ejecutar npm init (En la consola de comandos o Terminal de Visual Code, ejecutar: npm init ... darle todo ENTER y escribir "yes" al final)
-4. Instalar SASS (En la consola de comandos o Terminal de Visual Code, ejecutar: npm install -g sass)
-5. Instalar Node-SASS (En la consola de comandos o Terminal de Visual Code, ejecutar: npm install -D node-sass nodemon)
-6. Ejecutar npm run watch-css (En la consola de comandos o Terminal de Visual Code, ejecutar: npm run watch-css)
+Web: https://davidcuellard.github.io/js-ecommerce/
+
+# Gif
+
+![image](https://github.com/davidcuellard/davidCuellar/blob/main/media/gif.gif?raw=true)
+
+### `npm install -D node-sass nodemon`
+### `npm run watch-css`
+
+Both manage the styles in the web
