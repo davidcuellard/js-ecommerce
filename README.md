@@ -14,3 +14,6 @@ Web: https://davidcuellard.github.io/js-ecommerce/
 ### `npm run watch-css`
 
 Both manage the styles in the web
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
